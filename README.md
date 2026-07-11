@@ -114,7 +114,7 @@ Final Model
 | Model | MAE | RMSE |
 |--------|-----:|------:|
 | Random Forest | 1.98 | 4.38 |
-| LightGBM      | 0.94 | 2.05 |
+| **LightGBM**  | **0.94** | **2.05** |
 
 LightGBM achieved the best performance and was selected as the final forecasting model.
 
