@@ -185,6 +185,3 @@ Walmart-M5-Demand-Forecasting/
 ## Author
 
 **Indumathi Balasubramaniyan**
-M.Sc. Statistics
-
-Aspiring Data Scientist
