@@ -96,3 +96,18 @@ This forecasting system can help retailers:
 - Improve demand forecasting accuracy
 - Support better business decisions
 """)
+
+# -----------------------------
+# Sidebar
+# -----------------------------
+st.sidebar.title("🛒 Walmart M5")
+
+st.sidebar.info(
+    """
+    **Retail Demand Forecasting**
+
+    Developed by:
+
+    **Indumathi Balasubramaniyan**
+    """
+)
