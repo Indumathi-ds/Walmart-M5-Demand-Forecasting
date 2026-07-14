@@ -11,8 +11,26 @@ st.set_page_config(
     layout="wide"
 )
 
-# Load trained model
+# -----------------------------
+# Sidebar
+# -----------------------------
+st.sidebar.title("🛒 Walmart M5")
+
+st.sidebar.info(
+    """
+    **Retail Demand Forecasting**
+
+    Developed by:
+
+    **Indumathi Balasubramaniyan**
+    """
+)
+
+# -----------------------------
+# Load Trained Model
+# -----------------------------
 model = joblib.load("lightgbm_model.pkl")
+
 # -----------------------------
 # Title
 # -----------------------------
@@ -45,7 +63,7 @@ st.write("""
 st.divider()
 
 # -----------------------------
-# Technologies
+# Technologies Used
 # -----------------------------
 st.header("🛠 Technologies Used")
 
@@ -57,7 +75,7 @@ with col1:
 - Pandas
 - NumPy
 - Scikit-learn
-    """)
+""")
 
 with col2:
     st.markdown("""
@@ -65,7 +83,7 @@ with col2:
 - Streamlit
 - Matplotlib
 - Joblib
-    """)
+""")
 
 st.divider()
 
@@ -77,12 +95,12 @@ st.header("📈 Model Performance")
 col1, col2 = st.columns(2)
 
 with col1:
-    st.metric("MAE", "0.94")
+    st.metric("Mean Absolute Error (MAE)", "0.94")
 
 with col2:
-    st.metric("RMSE", "2.05")
+    st.metric("Root Mean Squared Error (RMSE)", "2.05")
 
-st.info("LightGBM achieved better performance than Random Forest on the Walmart M5 dataset.")
+st.success("✅ LightGBM achieved better performance than Random Forest on the Walmart M5 Demand Forecasting dataset.")
 
 st.divider()
 
@@ -92,85 +110,32 @@ st.divider()
 st.header("💼 Business Value")
 
 st.write("""
-This forecasting system can help retailers:
+This demand forecasting solution can help retailers:
 
-- Improve inventory planning
-- Reduce stock-outs
-- Reduce excess inventory
-- Improve demand forecasting accuracy
-- Support better business decisions
+- 📦 Improve inventory planning
+- 📉 Reduce stock-outs
+- 📈 Reduce excess inventory
+- 🎯 Improve demand forecasting accuracy
+- 💰 Reduce inventory holding costs
+- 🛍 Support smarter replenishment decisions
+- 📊 Enable data-driven business planning
 """)
 
 st.divider()
 
 # -----------------------------
-# Business Insights
+# Navigation
 # -----------------------------
-st.header("📊 Business Insights")
+st.header("🚀 Explore the Project")
 
-tab1, tab2, tab3 = st.tabs([
-    "Category Sales",
-    "Weekday Sales",
-    "SNAP Analysis"
-])
+st.info("""
+Use the navigation menu on the left to explore:
 
-with tab1:
+📊 **Business Insights**
+- Category-wise Sales
+- Weekday-wise Sales
+- SNAP Analysis
 
-    st.subheader("Total Sales by Category")
-
-    category_sales = {
-        "FOODS": 3366443,
-        "HOUSEHOLD": 1465505,
-        "HOBBIES": 889141
-    }
-
-    st.bar_chart(category_sales)
-
-    st.success("FOODS category contributes the highest sales.")
-
-
-with tab2:
-
-    st.subheader("Sales by Weekday")
-
-    weekday_sales = {
-        "Saturday":1036392,
-        "Sunday":1031171,
-        "Friday":818223,
-        "Monday":779594,
-        "Tuesday":694154,
-        "Thursday":684728,
-        "Wednesday":676827
-    }
-
-    st.bar_chart(weekday_sales)
-
-    st.success("Weekend sales are higher than weekdays.")
-
-
-with tab3:
-
-    st.subheader("SNAP Impact")
-
-    snap_sales = {
-        "Non SNAP":1.09,
-        "SNAP":1.19
-    }
-
-    st.bar_chart(snap_sales)
-
-    st.success("Average sales are slightly higher on SNAP days.")
-# -----------------------------
-# Sidebar
-# -----------------------------
-st.sidebar.title("🛒 Walmart M5")
-
-st.sidebar.info(
-    """
-    **Retail Demand Forecasting**
-
-    Developed by:
-
-    **Indumathi Balasubramaniyan**
-    """
-)
+🤖 **Sales Prediction**
+- Predict product demand using the trained LightGBM model.
+""")
