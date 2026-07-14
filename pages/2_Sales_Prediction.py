@@ -170,7 +170,7 @@ if predict:
         "event_name_2",
         "event_type_2"
     ]
-        try:
+try:
 
         # ----------------------------------------
         # Encode categorical variables
@@ -308,22 +308,10 @@ st.caption(
     "Developed by Indumathi Balasubramaniyan | Walmart M5 Demand Forecasting"
 )
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    ]
-    
+
+
+
+
+
+
+
