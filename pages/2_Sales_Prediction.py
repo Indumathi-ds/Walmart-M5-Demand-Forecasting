@@ -1,6 +1,6 @@
 import streamlit as st
-import joblib
 import pandas as pd
+import joblib
 
 st.set_page_config(
     page_title="Sales Prediction",
@@ -9,56 +9,72 @@ st.set_page_config(
 
 st.title("🤖 Walmart Sales Prediction")
 
-st.write("Enter the product details below to predict sales.")
-
-# Load trained model
+# Load model and encoders
 model = joblib.load("lightgbm_model.pkl")
+encoders = joblib.load("label_encoders.pkl")
 
-st.divider()
+st.write("Enter the product details below.")
 
-# --------------------------
-# User Inputs
-# --------------------------
+# -----------------------------
+# Inputs
+# -----------------------------
 
-store = st.selectbox(
+item_id = st.text_input("Item ID")
+
+dept_id = st.selectbox(
+    "Department",
+    ["FOODS_1", "FOODS_2", "FOODS_3",
+     "HOBBIES_1", "HOBBIES_2",
+     "HOUSEHOLD_1", "HOUSEHOLD_2"]
+)
+
+cat_id = st.selectbox(
+    "Category",
+    ["FOODS", "HOBBIES", "HOUSEHOLD"]
+)
+
+store_id = st.selectbox(
     "Store",
     ["CA_1"]
 )
 
-category = st.selectbox(
-    "Category",
-    ["FOODS","HOUSEHOLD","HOBBIES"]
+weekday = st.selectbox(
+    "Weekday",
+    ["Monday","Tuesday","Wednesday","Thursday",
+     "Friday","Saturday","Sunday"]
 )
 
-price = st.number_input(
+sell_price = st.number_input(
     "Selling Price",
     min_value=0.0,
     value=5.0
 )
 
-weekday = st.selectbox(
-    "Weekday",
-    [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-    ]
+lag_1 = st.number_input(
+    "Yesterday Sales",
+    min_value=0.0,
+    value=1.0
 )
 
-month = st.slider(
-    "Month",
-    1,
-    12,
-    6
+lag_7 = st.number_input(
+    "Last Week Sales",
+    min_value=0.0,
+    value=1.0
 )
 
-snap = st.selectbox(
-    "SNAP Day",
-    ["No","Yes"]
+rolling_mean_7 = st.number_input(
+    "7-Day Average Sales",
+    min_value=0.0,
+    value=1.0
 )
 
-st.button("Predict Sales")
+rolling_std_7 = st.number_input(
+    "7-Day Sales Std",
+    min_value=0.0,
+    value=0.5
+)
+
+predict = st.button("Predict Sales")
+
+if predict:
+    st.info("Prediction logic will be added in the next step.")
