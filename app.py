@@ -1,4 +1,6 @@
 import streamlit as st
+import joblib
+import pandas as pd
 
 # -----------------------------
 # Page Configuration
@@ -9,6 +11,8 @@ st.set_page_config(
     layout="wide"
 )
 
+# Load trained model
+model = joblib.load("lightgbm_model.pkl")
 # -----------------------------
 # Title
 # -----------------------------
