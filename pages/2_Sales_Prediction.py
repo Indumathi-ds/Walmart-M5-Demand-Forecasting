@@ -169,7 +169,6 @@ if predict:
         "event_type_1",
         "event_name_2",
         "event_type_2"
-
     ]
         try:
 
@@ -308,3 +307,23 @@ st.divider()
 st.caption(
     "Developed by Indumathi Balasubramaniyan | Walmart M5 Demand Forecasting"
 )
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    ]
+    
