@@ -117,6 +117,9 @@ Use the navigation menu on the left to explore:
 - Weekday-wise Sales
 - SNAP Analysis
 
-🤖 **Sales Prediction**
-- Predict product demand using the trained LightGBM model.
+**Model Performance**
+- Model Comparison
+- Machine Learning Pipelines
+- Business Conclusions
+
 """)
