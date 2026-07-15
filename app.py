@@ -105,25 +105,6 @@ st.success("✅ LightGBM achieved better performance than Random Forest on the W
 st.divider()
 
 # -----------------------------
-# Business Value
-# -----------------------------
-st.header("💼 Business Value")
-
-st.write("""
-This demand forecasting solution can help retailers:
-
-- 📦 Improve inventory planning
-- 📉 Reduce stock-outs
-- 📈 Reduce excess inventory
-- 🎯 Improve demand forecasting accuracy
-- 💰 Reduce inventory holding costs
-- 🛍 Support smarter replenishment decisions
-- 📊 Enable data-driven business planning
-""")
-
-st.divider()
-
-# -----------------------------
 # Navigation
 # -----------------------------
 st.header("🚀 Explore the Project")
