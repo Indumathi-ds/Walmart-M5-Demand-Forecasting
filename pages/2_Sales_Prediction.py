@@ -94,7 +94,7 @@ predict = st.button(
     type="primary"
 )
 if predict:
-    
+
     input_df = pd.DataFrame({
         "item_id": [selected_row["item_id"]],
         "dept_id": [selected_row["dept_id"]],
@@ -131,11 +131,13 @@ categorical_cols = [
         "event_name_2",
         "event_type_2"
     ]
+
 try:
+    
     for col in categorical_cols:
-        input_df[col] = encoders[col].transform(input_df[col])    
-        
-        feature_order = [
+        input_df[col] = encoders[col].transform(input_df[col])
+
+    feature_order = [
             "item_id",
             "dept_id",
             "cat_id",
@@ -159,9 +161,8 @@ try:
             "rolling_mean_7",
             "rolling_std_7"
         ]
-        
-
         input_df = input_df[feature_order]
+
         prediction = model.predict(input_df)[0]
         st.divider()
 
@@ -254,7 +255,7 @@ try:
             summary,
             use_container_width=True
         )
-    except Exception as e:
+        except Exception as e:
 
         st.error("Prediction failed.")
 
@@ -293,3 +294,13 @@ st.divider()
 st.caption(
     "Walmart M5 Demand Forecasting | LightGBM | Streamlit"
 )
+
+
+
+
+
+
+
+
+
+
