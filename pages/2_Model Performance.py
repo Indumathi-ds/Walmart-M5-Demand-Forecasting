@@ -148,21 +148,18 @@ st.divider()
 # -------------------------------------------------
 
 st.header("💼 Business Impact")
+st.divider()
 
 st.write("""
+This demand forecasting solution can help retailers:
 
-Using LightGBM forecasting can help retailers:
-
-- Improve inventory planning
-
-- Reduce stock shortages
-
-- Reduce excess inventory
-
-- Improve replenishment decisions
-
-- Support data-driven retail operations
-
+- 📦 Improve inventory planning
+- 📉 Reduce stock-outs
+- 📈 Reduce excess inventory
+- 🎯 Improve demand forecasting accuracy
+- 💰 Reduce inventory holding costs
+- 🛍 Support smarter replenishment decisions
+- 📊 Enable data-driven business planning
 """)
 
 st.divider()
