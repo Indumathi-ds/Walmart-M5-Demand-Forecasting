@@ -38,12 +38,8 @@ selected_item = st.selectbox("Item ID", item_list)
 
 item_df = sales[sales["item_id"] == selected_item].copy()
 
-available_dates = sorted(item_df["date"].dt.strftime("%Y-%m-%d").unique())
-selected_date = st.selectbox("Historical Date", available_dates)
-
-selected_row = item_df[item_df["date"].dt.strftime("%Y-%m-%d") == selected_date].iloc[0]
-
 st.divider()
+selected_row = item_df.iloc[0]
 predict = st.button("Predict Sales", type="primary")
 
 if predict:
