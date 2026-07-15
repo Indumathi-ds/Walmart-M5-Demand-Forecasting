@@ -44,12 +44,6 @@ selected_date = st.selectbox("Historical Date", available_dates)
 selected_row = item_df[item_df["date"].dt.strftime("%Y-%m-%d") == selected_date].iloc[0]
 
 st.divider()
-st.subheader("Selected Record")
-
-display_cols = [
-    "item_id","dept_id","cat_id","store_id","state_id","date",
-    "sell_price","lag_1","lag_7","rolling_mean_7","rolling_std_7"
-]
 
 st.dataframe(pd.DataFrame(selected_row[display_cols]).T, use_container_width=True)
 
