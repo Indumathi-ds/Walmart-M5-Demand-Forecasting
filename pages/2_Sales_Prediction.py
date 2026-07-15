@@ -44,9 +44,6 @@ selected_date = st.selectbox("Historical Date", available_dates)
 selected_row = item_df[item_df["date"].dt.strftime("%Y-%m-%d") == selected_date].iloc[0]
 
 st.divider()
-
-st.dataframe(pd.DataFrame(selected_row[display_cols]).T, use_container_width=True)
-
 predict = st.button("Predict Sales", type="primary")
 
 if predict:
