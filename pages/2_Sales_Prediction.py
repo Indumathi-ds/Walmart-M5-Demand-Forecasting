@@ -22,7 +22,7 @@ st.divider()
 
 @st.cache_data
 def load_sales():
-    df = pd.read_csv("processed_sales.csv")
+    df = pd.read_csv("prediction_lookup.csv")
     df["date"] = pd.to_datetime(df["date"])
     return df
 
